@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:cc="http://web.resource.org/cc/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<channel>
+		<atom:link href="https://127.0.0.1/feeds/{{ feed.id }}/rss" rel="self" type="application/rss+xml"/>
+		<title>{{ feed.name }}</title>
+        <description>Feed for {{ feed.name }}</description>
+		<pubDate>Sun, 14 Jun 2020 15:00:00 +0000</pubDate>
+		<lastBuildDate>Sat, 20 Jun 2020 16:25:12 +0000</lastBuildDate>
+		<generator>Django</generator>
+		<link>https://127.0.0.1/</link>
+		<language>en</language>
+        {% for track in feed.tracks.all %}
+		<item>
+			<title><![CDATA[{{ track.name }}]]></title>
+			<link><![CDATA[{{ track.url }}]]></link>
+		</item>
+        {% endfor %}
+	</channel>
+</rss>

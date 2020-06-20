@@ -1,0 +1,10 @@
+<h1>{{ feed.name }}</h1>
+<a href="{% url 'feed' feed.id %}">{% url 'feed' feed.id %}</a>
+<h2>Tracks</h2>
+<ul>
+    {% for track in feed.tracks.all %}
+        <li>{{ track.name }} ({{ track.url }})</li>
+    {% empty %}
+        <li>No Tracks</li>
+    {% endfor %}
+</ul>

@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from myfeeds.models import Feed, Track
+
+admin.site.register(Feed)
+admin.site.register(Track)

@@ -1,0 +1,6 @@
+<h1>Feeds</h1>
+<ul>
+    {% for feed in object_list.all %}
+        <li><a href="{% url 'feed_detail' feed.id %}">{{ feed.name }}</a></li>
+    {% endfor %}
+</ul>
